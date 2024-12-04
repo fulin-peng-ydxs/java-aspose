@@ -1,4 +1,4 @@
-package pdf.quick;
+package pdf.quick.convert;
 
 
 import com.aspose.pdf.Document;
@@ -10,7 +10,7 @@ import com.aspose.pdf.SaveFormat;
  * @author pengshuaifeng
  * 2024/12/3
  */
-public class PdfConvertToDoc {
+public class PdfToDoc {
 
     public static void main(String arg[]) {
         // Open the quick PDF document
