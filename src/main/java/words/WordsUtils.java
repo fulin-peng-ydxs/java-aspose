@@ -66,7 +66,7 @@ public class WordsUtils {
 
             // 找到模板行
             for (Row row : table.getRows()) {
-                if (row.toString(SaveFormat.TEXT).contains(VARIABLE_PREFIX_PLACEHOLDER)) {
+                if (row.toString(SaveFormat.TEXT).contains(getVariablePrefix(templateSettings))) {
                     templateRow = row;
                     break;
                 }
