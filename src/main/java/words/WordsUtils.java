@@ -84,7 +84,7 @@ public class WordsUtils {
                         if (value instanceof  ImageSettings){
                             replaceImageVariables(doc, entry.getKey(), ((ImageSettings) value).imageStream, variablePrefix,variableSuffix);
                         }else{
-                            cell.getRange().replace(variablePrefix + entry.getKey() + variableSuffix, value.toString());
+                            cell.getRange().replace(variablePrefix + entry.getKey() + variableSuffix,value==null ?  "" : value.toString());
                         }
                     }
                 }
@@ -105,7 +105,8 @@ public class WordsUtils {
      */
     public static void replaceTextVariables(Document doc, TemplateSettings templateSettings) throws Exception {
         for (Map.Entry<String, Object> entry : templateSettings.textMap.entrySet()) {
-            doc.getRange().replace(getVariablePrefix(templateSettings) + entry.getKey() + getVariableSuffix(templateSettings), entry.getValue().toString());
+            Object value = entry.getValue();
+            doc.getRange().replace(getVariablePrefix(templateSettings) + entry.getKey() + getVariableSuffix(templateSettings), value==null?"": value.toString());
         }
     }
 
